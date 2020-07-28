@@ -30,7 +30,7 @@ if empty(glob('~/.config/nvim/_machine_specific.vim'))
 	let has_machine_specific_file = 0
 	silent! exec "!cp ~/.config/nvim/default_configs/_machine_specific_default.vim ~/.config/nvim/_machine_specific.vim"
 endif
-source $XDG_CONFIG_HOME/nvim/_machine_specific.vim
+source ~/.config/nvim/_machine_specific.vim
 
 
 " ====================
@@ -140,11 +140,8 @@ noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
 "noremap <LEADER>st :Startify<CR>
 
 " Undo operations
-noremap l u
 
 " Insert Key
-noremap k i
-noremap K I
 
 " make Y to copy till the end of the line
 nnoremap Y y$
@@ -184,16 +181,10 @@ nnoremap <c-n> :tabe<CR>:-tabmove<CR>:term lazynpm<CR>
 " < n   i >
 "     e
 "     v
-noremap <silent> u k
-noremap <silent> n h
-noremap <silent> e j
-noremap <silent> i l
-noremap <silent> gu gk
-noremap <silent> ge gj
 
 " U/E keys for 5 times u/e (faster navigation)
-noremap <silent> U 5k
-noremap <silent> E 5j
+noremap <silent> K 5k
+noremap <silent> J 5j
 
 " N key: go to the start of the line
 noremap <silent> N 0
@@ -205,14 +196,13 @@ noremap W 5w
 noremap B 5b
 
 " set h (same as n, cursor left) to 'end of word'
-noremap h e
 
 " Ctrl + U or E will move up/down the view port without moving the cursor
 noremap <C-U> 5<C-y>
 noremap <C-E> 5<C-e>
 
 
-source $XDG_CONFIG_HOME/nvim/cursor.vim
+source ~/.config/nvim/cursor.vim
 
 " ===
 " === Insert Mode Cursor Movement
@@ -295,7 +285,7 @@ noremap tmi :+tabmove<CR>
 " === Markdown Settings
 " ===
 " Snippets
-source $XDG_CONFIG_HOME/nvim/md-snippets.vim
+source ~/.config/nvim/md-snippets.vim
 " auto spell
 autocmd BufRead,BufNewFile *.md setlocal spell
 
@@ -1307,7 +1297,7 @@ noremap <c-y> :NR<CR>
 " ===
 " === any-jump
 " ===
-nnoremap j :AnyJump<CR>
+nnoremap e :AnyJump<CR>
 let g:any_jump_window_width_ratio  = 0.8
 let g:any_jump_window_height_ratio = 0.9
 
